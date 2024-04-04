@@ -2,17 +2,11 @@ const chooseBoardButton = document.getElementById('choose-board-button');
 
 
 const chooseBoardModalId = 'choose-board-modal';
-const chooseBoardModalEnvironmentId = 'choose-board-environment';
 
 let currentBoard = JSON.parse(localStorage.getItem('board')) ?? 1;
+let isModalOpen = false;
 
 function openChooseBoardModal() {
-    const modalEnvironment = document.createElement('div');
-    modalEnvironment.setAttribute('id', chooseBoardModalEnvironmentId);
-    modalEnvironment.className = 'w-screen h-screen absolute left-0 top-0';
-    modalEnvironment.style.zIndex = 70;
-
-    
     const modal = document.createElement('div');
     modal.setAttribute('id', chooseBoardModalId);
     modal.style.width = chooseBoardButton.offsetWidth + 'px';
@@ -27,24 +21,25 @@ function openChooseBoardModal() {
     modal.addEventListener('click', () => {});    
     modalEnvironment.addEventListener('click', closeChooseBoardModal);
 
-    document.body.appendChild(modalEnvironment);
     document.body.append(modal);
 }
 
 function closeChooseBoardModal() {
     const modal = document.getElementById(chooseBoardModalId);
-    const modalEnvironment = document.getElementById(chooseBoardModalEnvironmentId);
-    
     modal.remove();
-
-    modalEnvironment.removeEventListener('click', closeChooseBoardModal);
-    modalEnvironment.remove();  
 }
 
 function handleChooseBoard(event) {
     event.preventDefault();
     event.stopPropagation();
-    openChooseBoardModal();
+
+    if (isModalOpen === true) {
+        closeChooseBoardModal();
+    }
+    else {
+        openChooseBoardModal();
+    }
+    isModalOpen = !isModalOpen;
 }
 
 function initBoards() {
