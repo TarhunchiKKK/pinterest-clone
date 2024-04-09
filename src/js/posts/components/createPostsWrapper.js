@@ -7,7 +7,7 @@ export function createPostsWrapper(posts) {
     postsWrapper.setAttribute('class', postsWrapperStyle);
 
     for (let post of posts) {
-        postsWrapper.appendChild(createPostWrapper(post));
+        postsWrapper.appendChild(createPost(post));
     }
 
     return postsWrapper;
