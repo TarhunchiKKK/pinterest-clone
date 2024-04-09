@@ -52,7 +52,7 @@ function openBoardModal(pin) {
     fetch(BOARDS_URL)
         .then(response => response.json())
         .then(boards => boards.forEach(board => { 
-            form.append(createBoardCheckbox(pin, board))
+            form.append(createBoardCheckbox(pin, board.number))
 }       ))
         .then(() => {
             modal.append(form);

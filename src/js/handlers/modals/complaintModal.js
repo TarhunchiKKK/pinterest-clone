@@ -50,7 +50,7 @@ function openComplaintsModal(pin) {
     fetch(COMPLAINTS_URL)
         .then(response => response.json())
         .then(complaints => complaints.forEach(complaint => {
-            form.append(createComplaintCheckbox(pin, complaint));
+            form.append(createComplaintCheckbox(pin, complaint.title));
         }))
         .then(() => {
             modal.append(form);
