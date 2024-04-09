@@ -1,9 +1,9 @@
 import uniqid from 'uniqid';
 
-export class Post {
+export class Pin {
     id;
     title;
-    imageUrl;
+    image;
     constructor(title, imageUrl) {
         this.id = uniqid();
         this.title = title;
