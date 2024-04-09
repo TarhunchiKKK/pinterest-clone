@@ -4,10 +4,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pintrest</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+                list-style-type: none;
+                box-sizing: border-box;
+            }
+        </style>
         <link rel="stylesheet" href="./css/output.css">
     </head>
     <body>
+        <header>
+            <div class="container mx-auto">
+                <div class="flex flex-row justify-between items-center gap-1 md:gap-3 px-1 md:px-2 py-2 md:py-6 h-14 md:h-20">
+                    <!-- Logo -->
+                    <div>
+                        <span class="font-bold text-sm md:text-xl">
+                            Pinterest
+                        </span>
+                    </div>
+
+                    <!-- Searchpost form -->
+                    <form id="search-form" class="overflow-hidden flex-grow rounded-md md:rounded-xl h-9 md:h-10">
+                        <input class="w-full h-full bg-orange-300 px-4 py-2 outline-none text-sm placeholder:text-md" type="text" placeholder="Type to search..." >
+                    </form>
+
+                    <!-- Choose board button -->
+                    <button id="choose-board-button" class="bg-green-500 rounded-lg p-0 md:p-3 flex justify-center items-center h-9 md:h-10">
+                        <span class="text-xs md:text-lg">
+                            Choose board
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
         <div id="posts-container" class="container mx-auto flex flex-row items-start flex-nowrap"></div>
+
 
         <script type="module" src="./js/app.js"></script>
     </body>
