@@ -3,9 +3,17 @@ import { createPinsWrapper } from "./components/createPinsWrapper"
 import { getColumnsCount } from "./utils/getColumnsCount";
 
 let pins = JSON.parse(localStorage.getItem('pins')) ?? [];
-let pinsSearchOptions = {
-    title: undefined,
-    board: undefined,
+let pinsSearchOptions = JSON.parse(localStorage.getItem('search')) ??  { board: 1 };
+
+
+function setTitleToSearchPins(title) {
+    pinsSearchOptions.title = title;
+    localStorage.setItem('search', JSON.stringify(pinsSearchOptions));
+}
+
+function setBoardToSearchPins(board) {
+    pinsSearchOptions.board = board;
+    localStorage.setItem('search', JSON.stringify(pinsSearchOptions));
 }
 
 
@@ -23,7 +31,7 @@ function renderPins(renderList = pins) {
 }
 
 // поиск пинов
-function searchPins({ title, board }) {
+function searchPins({ title, board } = pinsSearchOptions) {
     return pins
         .filter(pin => title === undefined ? true : pin.title.includes(title.toLowerCase()))
         .filter(pin => title === undefined ? true : pin.board === board);
@@ -38,6 +46,8 @@ function savePins() {
 
 
 export {
+    setTitleToSearchPins,
+    setBoardToSearchPins,
     renderPins,
     searchPins,
     savePins

@@ -1,9 +1,8 @@
 const chooseBoardButton = document.getElementById('choose-board-button');
 
 
-const chooseBoardModalId = 'choose-board-modal';
+export const chooseBoardModalId = 'choose-board-modal';
 
-let currentBoard = JSON.parse(localStorage.getItem('board')) ?? 1;
 let isModalOpen = false;
 
 // открытие модального окна выбора доски
@@ -32,7 +31,7 @@ function closeChooseBoardModal() {
 }
 
 // обработчик нажатия кнопки выбора доски
-function handleChooseBoard(event) {
+function handleOpenBoardsDropdown(event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -46,10 +45,11 @@ function handleChooseBoard(event) {
 }
 
 function initBoardsButton() {
-    chooseBoardButton.addEventListener('click', handleChooseBoard);
+    chooseBoardButton.addEventListener('click', handleOpenBoardsDropdown);
 }
 
 
 export {
+    chooseBoardModalId,
     initBoardsButton,
 }
