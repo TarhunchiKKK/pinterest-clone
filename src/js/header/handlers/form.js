@@ -1,6 +1,7 @@
 const searchForm = document.getElementById('search-form');
 const searchFormInput = document.querySelector('search-form input');
 
+// обработчик поиска пинов по названию
 function handleSearchFormSubmit(event) {
     event.preventDefault();
     event.stopPropagation();

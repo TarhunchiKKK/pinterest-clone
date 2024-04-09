@@ -1,3 +1,4 @@
+// создание пина
 export function createPin(pin) {
     const pinWrapper = document.createElement('div');
     pinWrapper.setAttribute('class', 'w-full');

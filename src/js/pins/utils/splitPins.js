@@ -1,3 +1,4 @@
+// разбиение всех пинов на группы
 export function splitPins(pins, divisor = 7) {
     const splitedPins = []
     for (let i = 0; i < divisor; i++) {

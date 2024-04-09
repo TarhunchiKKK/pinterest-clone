@@ -1,3 +1,3 @@
-import { initBoards } from "./header/index.js";
+import { initBoardsButton } from "./header/index.js";
 
-initBoards();
+initBoardsButton();

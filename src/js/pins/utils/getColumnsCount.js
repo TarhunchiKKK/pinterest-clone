@@ -1,3 +1,4 @@
+// получения количества колонок в зависимости от ширины экрана
 export function getColumnsCount() {
     const windowSize = window.innerWidth
     if (1500 < windowSize) {

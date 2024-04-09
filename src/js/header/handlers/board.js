@@ -6,6 +6,7 @@ const chooseBoardModalId = 'choose-board-modal';
 let currentBoard = JSON.parse(localStorage.getItem('board')) ?? 1;
 let isModalOpen = false;
 
+// открытие модального окна выбора доски
 function openChooseBoardModal() {
     const modal = document.createElement('div');
     modal.setAttribute('id', chooseBoardModalId);
@@ -24,11 +25,13 @@ function openChooseBoardModal() {
     document.body.append(modal);
 }
 
+// закрытие модельного окна выбора доски
 function closeChooseBoardModal() {
     const modal = document.getElementById(chooseBoardModalId);
     modal.remove();
 }
 
+// обработчик нажатия кнопки выбора доски
 function handleChooseBoard(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -42,11 +45,11 @@ function handleChooseBoard(event) {
     isModalOpen = !isModalOpen;
 }
 
-function initBoards() {
+function initBoardsButton() {
     chooseBoardButton.addEventListener('click', handleChooseBoard);
 }
 
 
 export {
-    initBoards,
+    initBoardsButton,
 }
