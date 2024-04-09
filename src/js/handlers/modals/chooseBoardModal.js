@@ -1,4 +1,4 @@
-import { BOARDS_URL } from '../../utils/constants.js';
+import { getboards } from '../../utils/getBoards.js';
 
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';
@@ -49,15 +49,13 @@ function openBoardModal(pin) {
     form.addEventListener('submit', handleSubmit);
 
     // получение досок
-    fetch(BOARDS_URL)
-        .then(response => response.json())
-        .then(boards => boards.forEach(board => { 
-            form.append(createBoardCheckbox(pin, board.number))
-}       ))
-        .then(() => {
-            modal.append(form);
-            document.body.append(environment, modal);
-        });
+    const boards = getboards();
+    boards.forEach(b => { 
+        form.append(createBoardCheckbox(pin, b));
+    });
+
+    modal.append(form);
+    document.body.append(environment, modal);
 }
 
 // закрытие модального окна

@@ -1,4 +1,4 @@
-import { COMPLAINTS_URL } from '../../utils/constants.js';
+import { getComplaints } from '../../utils/getComplaints.js';
 
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';
@@ -45,17 +45,13 @@ function openComplaintsModal(pin) {
     form.setAttribute('id', formId);
     form.addEventListener('submit', handleSubmit);
 
-    
+    const complaints = getComplaints();
+    complaints.forEach(c => {
+        form.append(createComplaintCheckbox(pin, c));
+    });
 
-    fetch(COMPLAINTS_URL)
-        .then(response => response.json())
-        .then(complaints => complaints.forEach(complaint => {
-            form.append(createComplaintCheckbox(pin, complaint.title));
-        }))
-        .then(() => {
-            modal.append(form);
-            document.body.append(environment, modal);
-        });
+    modal.append(form);
+    document.body.append(environment, modal);
 }
 
 function handleCloseModal(e) {
