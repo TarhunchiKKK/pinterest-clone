@@ -43,7 +43,7 @@ function handleSubmit(e) {
 }
 
 // открытие модельного окна
-function openBoardModal(pin) {
+function openBoardsModal(pin) {
     // окружение модельного окна
     const environment = document.createElement('div');
     environment.setAttribute('id', environmentId);
@@ -105,5 +105,5 @@ function handleCloseModal(e) {
 
 
 export {
-    openBoardModal,
+    openBoardsModal,
 }

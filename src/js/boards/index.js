@@ -1,6 +1,7 @@
 export {
-    handleAddBoardToPin,
+    // handleAddBoardToPin,
     handleChooseBoard,
-    handleBoardsButtonClick
+    handleBoardsButtonClick,
+    handleOpenBoardsModal
 } from './handlers/handlers.js';
 export { getBoards } from './helpers/getBoards.js';

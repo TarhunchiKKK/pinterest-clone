@@ -6,12 +6,10 @@ import { updatePin } from '../../pins/index.js';
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';
 const environmentId = 'complaint-modal-environment';
-const sendButtonId = 'send-button';
 const cancelButtonId = 'cancel-button';
 
 // создание чекбокса
 function createComplaintCheckbox(pin, complaint) {
-
     const div = document.createElement('div');
     div.setAttribute('class', 'mb-4 last:mb-0');
 

@@ -1,6 +1,7 @@
-import { getCurrentPin } from "../../pins";
+import { getCurrentPin, renderPins } from "../../pins";
 import { addPinToBoard, setBoardToSearchPins } from "../../pins";
 import { openChooseBoardDropdown, closeChooseBoardDropdown } from "../components/chooseBoardDropdown.js";
+import { openBoardsModal } from "../components/chooseBoardModal.js";
 
 // обработчик нажатия кнопки выбора доски
 let isModalOpen = false;
@@ -25,21 +26,28 @@ function handleChooseBoard(e) {
 
     const board = +e.target.value;
     setBoardToSearchPins(board);
+
+    renderPins();
 }
 
-// обработчик добавлени пина на доску
-function handleAddBoardToPin(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const board = +e.target.value;
-    const currentPin = getCurrentPin();
-    addPinToBoard(currenPin.id, board);
-    updatePin(currentPin);
+function handleOpenBoardsModal(e) {
+    openBoardsModal();
 }
+
+// // обработчик добавлени пина на доску
+// function handleAddBoardToPin(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//     const board = +e.target.value;
+//     const currentPin = getCurrentPin();
+//     addPinToBoard(currentPin.id, board);
+//     updatePin(currentPin);
+// }
 
 export {
-    handleAddBoardToPin,
+    // handleAddBoardToPin,
     handleChooseBoard,
-    handleBoardsButtonClick
+    handleBoardsButtonClick,
+    handleOpenBoardsModal,
 }
