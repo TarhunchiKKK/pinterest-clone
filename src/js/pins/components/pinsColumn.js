@@ -3,7 +3,7 @@ import { createPin } from "./createpin";
 const pinsWrapperStyle = 'flex flex-column justify-start items-center grow'
 
 // создание колонки с пинами
-export function createPinsWrapper(pins) {
+export function createPinsColumn(pins) {
     const pinsWrapper = document.createElement('div');
     pinsWrapper.setAttribute('class', pinsWrapperStyle);
 

@@ -1,7 +1,11 @@
+import { PIN_WRAPPER_CLASS } from "../../shared/constants";
+
 // создание пина
 export function createPin(pin) {
     const pinWrapper = document.createElement('div');
     pinWrapper.setAttribute('class', 'w-full');
+    pinWrapper.setAttribute('class', PIN_WRAPPER_CLASS);
+    pinWrapper.setAttribute('id', `pin-${pin.id}`);
 
     const imageWrapper = document.createElement('div');
     imageWrapper.setAttribute('class', 'rounded-md sm:rounded-lg md:rounded-xl hover:cursor-pointer');

@@ -1,12 +1,9 @@
 const chooseBoardButton = document.getElementById('choose-board-button');
+const chooseBoardModalId = 'choose-board-modal';
 
-
-export const chooseBoardModalId = 'choose-board-modal';
-
-let isModalOpen = false;
 
 // открытие модального окна выбора доски
-function openChooseBoardModal() {
+function openChooseBoardDropdown() {
     const modal = document.createElement('div');
     modal.setAttribute('id', chooseBoardModalId);
     modal.style.width = chooseBoardButton.offsetWidth + 'px';
@@ -19,37 +16,19 @@ function openChooseBoardModal() {
     modal.style.zIndex = 100;
 
     modal.addEventListener('click', () => {});    
-    modalEnvironment.addEventListener('click', closeChooseBoardModal);
+    modalEnvironment.addEventListener('click', closeChooseBoardDropdown);
 
     document.body.append(modal);
 }
 
 // закрытие модельного окна выбора доски
-function closeChooseBoardModal() {
+function closeChooseBoardDropdown() {
     const modal = document.getElementById(chooseBoardModalId);
     modal.remove();
 }
 
-// обработчик нажатия кнопки выбора доски
-function handleOpenBoardsDropdown(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (isModalOpen === true) {
-        closeChooseBoardModal();
-    }
-    else {
-        openChooseBoardModal();
-    }
-    isModalOpen = !isModalOpen;
-}
-
-function initBoardsButton() {
-    chooseBoardButton.addEventListener('click', handleOpenBoardsDropdown);
-}
-
 
 export {
-    chooseBoardModalId,
-    initBoardsButton,
+    openChooseBoardDropdown,
+    closeChooseBoardDropdown
 }

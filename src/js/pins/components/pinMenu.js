@@ -1,4 +1,4 @@
-import { openBoardModal } from './chooseBoardModal.js';
+import { openBoardModal } from '../../boards/components/chooseBoardModal.js';
 import { openComplaintModal } from './chooseComplaintModal.js';
 
 const modalId = 'pin-modal';
