@@ -1,5 +1,4 @@
-import { getCurrentPin } from "../../pins/lib/currentPin";
-import { addComplaintToPin } from "../../pins/pins";
+import { getCurrentPin, addComplaintToPin } from "../../pins";
 
 function handleAddComplaintToPin(e) {
     e.stopPropagation();

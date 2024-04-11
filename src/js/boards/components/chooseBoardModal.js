@@ -1,4 +1,4 @@
-import { getboards } from '../../utils/getBoards.js';
+import { getBoards } from '../../utils/getBoards.js';
 
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';
@@ -49,7 +49,7 @@ function openBoardModal(pin) {
     form.addEventListener('submit', handleSubmit);
 
     // получение досок
-    const boards = getboards();
+    const boards = getBoards();
     boards.forEach(b => { 
         form.append(createBoardCheckbox(pin, b));
     });

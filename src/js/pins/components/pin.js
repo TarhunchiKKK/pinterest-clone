@@ -1,4 +1,4 @@
-import { PIN_WRAPPER_CLASS } from "../../shared/constants";
+import { PIN_WRAPPER_CLASS } from "../../shared/constants.js";
 
 // создание пина
 export function createPin(pin) {

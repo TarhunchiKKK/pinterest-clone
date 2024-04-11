@@ -1,6 +1,6 @@
-import { PIN_WRAPPER_CLASS } from "../../shared/constants";
+import { PIN_WRAPPER_CLASS } from "../../shared/constants.js";
 import { getPinById, renderPins, setTitleToSearchPins } from "../pins";
-import { openPinModal } from "../components/pinMenu";
+import { openPinModal } from "../components/pinMenu.js";
 
 // обработчик поиска пинов по названию
 function handleSearchFormSubmit(e) {

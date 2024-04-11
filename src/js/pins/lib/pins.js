@@ -1,7 +1,7 @@
-import { splitPins } from "./utils/splitPins";
-import { createPinsWrapper } from "./components/createPinsWrapper"
-import { getColumnsCount } from "./utils/getColumnsCount";
-import { getPinsSearchOptions } from "./search";
+import { splitPins } from "../helpers/splitPins.js";
+import { createPinsWrapper } from "../components/pinsColumn.js";
+import { getColumnsCount } from "../helpers/getColumnsCount.js";
+import { getPinsSearchOptions } from "./search.js";
 
 let pins = JSON.parse(localStorage.getItem('pins')) ?? [];
 

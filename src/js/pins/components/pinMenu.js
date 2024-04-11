@@ -1,5 +1,5 @@
-import { openBoardModal } from '../../boards/components/chooseBoardModal.js';
-import { openComplaintModal } from './chooseComplaintModal.js';
+import { openBoardModal } from '../../boards';
+import { openComplaintModal } from '../../complaints';
 
 const modalId = 'pin-modal';
 const environmentId = 'pin-modal-environment-id';

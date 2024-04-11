@@ -1,5 +1,5 @@
 import { PINS_URL } from '../../shared/constants.js';
-import { fillPins } from '../pins.js';
+import { fillPins } from '../lib/pins.js';
 
 function fetchPins() {
     fetch(PINS_URL)

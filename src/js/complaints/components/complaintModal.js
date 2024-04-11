@@ -1,4 +1,4 @@
-import { getComplaints } from '../../utils/getComplaints.js';
+import { getComplaints } from '../helpers/getComplaints.js';
 
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';

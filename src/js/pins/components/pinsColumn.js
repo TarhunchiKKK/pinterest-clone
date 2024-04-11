@@ -1,4 +1,4 @@
-import { createPin } from "./createpin";
+import { createPin } from "./createPin.js";
 
 const pinsWrapperStyle = 'flex flex-column justify-start items-center grow'
 

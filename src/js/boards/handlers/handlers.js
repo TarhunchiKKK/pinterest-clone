@@ -1,6 +1,6 @@
-import { getCurrentPin } from "../../pins/lib/currentPin";
-import { addPinToBoard, setBoardToSearchPins } from "../../pins/pins";
-import { openChooseBoardDropdown, closeChooseBoardDropdown } from "../components/chooseBoardDropdown";
+import { getCurrentPin } from "../../pins";
+import { addPinToBoard, setBoardToSearchPins } from "../../pins";
+import { openChooseBoardDropdown, closeChooseBoardDropdown } from "../components/chooseBoardDropdown.js";
 
 // обработчик нажатия кнопки выбора доски
 let isModalOpen = false;
