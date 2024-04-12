@@ -11,8 +11,5 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.3"
-  },
-  "dependencies": {
-    "uniqid": "^5.4.0"
   }
 }
