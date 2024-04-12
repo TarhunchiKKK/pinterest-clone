@@ -19,7 +19,6 @@ export {
 } from './lib/currentPin.js';
 
 export {
-    fetchPins,
     updatePin
 } from './api/api.js';
 

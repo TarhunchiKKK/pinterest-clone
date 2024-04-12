@@ -825,6 +825,15 @@ video {
   border-top-left-radius: 0.75rem;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .bg-\[\#d1478e\] {
   --tw-bg-opacity: 1;
   background-color: rgb(209 71 142 / var(--tw-bg-opacity));
@@ -879,6 +888,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -895,6 +909,11 @@ video {
 
 .font-bold {
   font-weight: 700;
+}
+
+.text-\[\#d1478e\] {
+  --tw-text-opacity: 1;
+  color: rgb(209 71 142 / var(--tw-text-opacity));
 }
 
 .outline-none {

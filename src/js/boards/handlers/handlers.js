@@ -1,7 +1,10 @@
-import { getCurrentPin, renderPins } from "../../pins/index.js";
-import { setBoardToSearchPins } from "../../pins/index.js";
-import { openChooseBoardDropdown, closeChooseBoardDropdown } from "../components/chooseBoardDropdown.js";
+import { getCurrentPin } from "../../pins/index.js";
+import { openChooseBoardDropdown, closeChooseBoardDropdown, setCloseBoardsDropdownCallback } from "../components/chooseBoardDropdown.js";
 import { openBoardsModal } from "../components/chooseBoardModal.js";
+
+
+// при закрытии окна флаг должен сбрасываться
+setCloseBoardsDropdownCallback(() => isModalOpen = false);
 
 // обработчик нажатия кнопки выбора доски
 let isModalOpen = false;
@@ -19,24 +22,13 @@ function handleBoardsButtonClick(event) {
     isModalOpen = !isModalOpen;
 }
 
-// обработчик выбора доски
-function handleChooseBoard(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const board = +e.target.value;
-    setBoardToSearchPins(board);
-
-    renderPins();
-}
-
+// открытие окна для добавления пина на доску
 function handleOpenBoardsModal(e) {
     const currentPin = getCurrentPin();
     openBoardsModal(currentPin);
 }
 
 export {
-    handleChooseBoard,
     handleBoardsButtonClick,
     handleOpenBoardsModal,
 }

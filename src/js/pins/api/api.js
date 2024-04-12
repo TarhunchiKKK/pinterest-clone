@@ -1,11 +1,4 @@
 import { PINS_URL } from '../../shared/constants.js';
-import { fillPins } from '../lib/pins.js';
-
-function fetchPins() {
-    fetch(PINS_URL)
-        .then(response => response.json())
-        .then(json => fillPins(json));
-}
 
 function updatePin(pin) {
     const options = {
@@ -18,8 +11,6 @@ function updatePin(pin) {
     fetch(`${PINS_URL}/${pin.id}`, options);
 }
 
-
 export {
-    fetchPins,
     updatePin
 }

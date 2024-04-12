@@ -49,8 +49,6 @@ function handleSubmit(e) {
 
 // открытие модельного окна
 function openBoardsModal(pin) {
-    console.log('Pin: ', pin)
-    
     // окружение модельного окна
     const environment = document.createElement('div');
     environment.setAttribute('id', environmentId);

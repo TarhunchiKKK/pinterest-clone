@@ -2,7 +2,6 @@ import { splitPins } from "../helpers/splitPins.js";
 import { createPinsColumn } from "../components/pinsColumn.js";
 import { getColumnsCount } from "../helpers/getColumnsCount.js";
 import { getPinsSearchOptions } from "./search.js";
-import { fetchPins } from "../api/api.js";
 import { PINS_URL } from "../../shared/constants.js";
 
 let pins = [];
