@@ -1,4 +1,4 @@
-import { getCurrentPin, addPinToBoard } from '../../pins/index.js';
+import { getCurrentPin, savePins } from '../../pins/index.js';
 import { updatePin } from '../../pins/index.js';
 import { getBoards } from '../helpers/getBoards.js';
 
@@ -16,11 +16,12 @@ function createBoardCheckbox(pin, board) {
     checkbox.setAttribute('value', board);
     checkbox.setAttribute('name', `board-${board}`);
     if (pin.boards.includes(board) === true) {
-        checkbox.setAttribute('checked');
+        checkbox.setAttribute('checked', true);
     }
 
     const label = document.createElement('label');
     label.setAttribute('for', `board-${board}`);
+    label.setAttribute('class', 'ml-2')
     label.innerText = `board-${board}`;
 
     div.append(checkbox, label);
@@ -29,24 +30,31 @@ function createBoardCheckbox(pin, board) {
 
 // выбор досок для пина
 function handleSubmit(e) {
+    e.preventDefault();
+    
     const form = document.getElementById(formId);
     const formData = new FormData(form);
 
     const currentPin = getCurrentPin();
+    currentPin.boards = [];
     for (let [name, value] of formData) {
-        addPinToBoard(pin.id, value);
+        currentPin.boards.push(+value)
     }
+
     updatePin(currentPin);
+    savePins();
     
     handleCloseModal();
 }
 
 // открытие модельного окна
 function openBoardsModal(pin) {
+    console.log('Pin: ', pin)
+    
     // окружение модельного окна
     const environment = document.createElement('div');
     environment.setAttribute('id', environmentId);
-    environment.setAttribute('class', 'w-screen h-screen');
+    environment.setAttribute('class', 'w-screen h-screen fixed top-0 left-0');
     environment.addEventListener('click', handleCloseModal);
 
     // модальное окно

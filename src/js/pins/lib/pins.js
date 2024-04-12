@@ -42,7 +42,7 @@ function renderPins() {
 
 // получение пина по id
 function getPinById(id) {
-    return pins.find(p => p.id === id) ?? null;
+    return pins.find(p => p.id === String(id)) ?? null;
 }
 
 // поиск пинов
@@ -67,17 +67,6 @@ function fillPins(data) {
     savePins();
 }
 
-// добавление пина на доску
-function addPinToBoard(pinId, board) {
-    const index = pins.findIndex(p => p.id === pinId);
-    if (index !== -1) {
-        if (!pins[index].boards.includes(board)) {
-            pins[index].boards.push(board);
-            savePins();
-        }
-    }
-}
-
 // добавление далобы на пин
 function addComplaintToPin(pinId, complaint) {
     const index = pins.findIndex(p => p.id === pinId);
@@ -96,7 +85,6 @@ export {
     searchPins,
     fillPins,
     savePins,
-    addPinToBoard,
     addComplaintToPin,
     getPinById,
     initPins

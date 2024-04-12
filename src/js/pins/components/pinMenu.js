@@ -7,7 +7,6 @@ const complaintButtonId = 'pin-modal-complaint-button';
 
 function openPinMenu(target) {
     const predict = target.closest(`.${PIN_IMAGE_WRAPPER}`);
-    console.log(predict)
 
     const menu = document.createElement('div');
     menu.setAttribute('class', 'absolute flex flex-col items-center gap-2 z-30 bg-[#d1478e] right-0 bottom-0 rounded-tl-xl px-4 py-2');
