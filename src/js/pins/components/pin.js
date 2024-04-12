@@ -21,7 +21,7 @@ export function createPin(pin) {
 
     // круг
     const pinCircle = document.createElement('div');
-    pinCircle.setAttribute('class', 'absolute rounded-full bg-[#d1478e] w-3 sm:w-6 lg:w-9 xl:w-12 h-3 sm:h-6 lg:h-9 xl:h-12 right-0 bottom-0');
+    pinCircle.setAttribute('class', 'absolute rounded-full bg-[#d1478e] w-6 sm:w-9 xl:w-12 h-6 sm:h-9 xl:h-12 right-0 bottom-0');
     pinCircle.addEventListener('mouseenter', handlePinCircleMouseenter);
     imageWrapper.append(pinCircle);
 

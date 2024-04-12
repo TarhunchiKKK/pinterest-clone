@@ -1,6 +1,6 @@
 import { splitPins } from "../helpers/splitPins.js";
 import { createPinsColumn } from "../components/pinsColumn.js";
-import { getColumnsCount } from "../helpers/getColumnsCount.js";
+import { getColumnsCount, setCurrentColumnsCount } from "../helpers/getColumnsCount.js";
 import { getPinsSearchOptions } from "./search.js";
 import { PINS_URL } from "../../shared/constants.js";
 
@@ -30,6 +30,7 @@ function renderPins() {
     
     const renderList = searchPins();
     const pinsWrappersCount = getColumnsCount();
+    setCurrentColumnsCount(pinsWrappersCount);
 
     const splitedPins = splitPins(renderList, pinsWrappersCount);
     const pinsWrappers = splitedPins.map(item => createPinsColumn(item));

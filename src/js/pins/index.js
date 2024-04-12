@@ -26,3 +26,8 @@ export {
     handlePinCircleMouseenter,
     handleSearchFormSubmit
 }from './handlers/handlers.js';
+
+export {
+    getColumnsCount,
+    getCurrentColumsCount
+} from './helpers/getColumnsCount.js';

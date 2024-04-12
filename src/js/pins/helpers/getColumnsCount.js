@@ -1,22 +1,38 @@
+let currentColumnsCount = 0; 
+
+function getCurrentColumsCount() {
+    return currentColumnsCount;
+}
+
+function setCurrentColumnsCount(count) {
+    currentColumnsCount = count;
+}
+
 // получения количества колонок в зависимости от ширины экрана
-export function getColumnsCount() {
+function getColumnsCount() {
     const windowSize = window.innerWidth
     if (1500 < windowSize) {
-        return 6
+        return 6;
     }
     else if (1024 < windowSize && windowSize <= 1500) {
-        return 5
+        return 5;
     }
     else if (768 < windowSize && windowSize <= 1024) {
-        return 4
+        return 4;
     }
     else if (540 < windowSize && windowSize <= 768) {
-        return 3
+        return 3;
     }
     else if (320 < windowSize && windowSize <= 540) {
-        return 2
+        return 2;
     }
     else {
-        return 1
+        return 1;
     }
+}
+
+export {
+    getCurrentColumsCount,
+    setCurrentColumnsCount,
+    getColumnsCount
 }
