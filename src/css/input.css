@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    
+@layer components {
+    .pin-wrapper {
+        @apply w-full;
+    }
 }

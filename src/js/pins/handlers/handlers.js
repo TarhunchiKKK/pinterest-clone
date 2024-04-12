@@ -1,6 +1,6 @@
 import { PIN_WRAPPER_CLASS } from "../../shared/constants.js";
+import { openPinMenu } from "../components/pinMenu.js";
 import { getPinById, renderPins, setTitleToSearchPins } from "../pins";
-import { openPinModal } from "../components/pinMenu.js";
 
 // обработчик поиска пинов по названию
 function handleSearchFormSubmit(e) {
@@ -18,16 +18,18 @@ function handleSearchFormSubmit(e) {
 
 
 // открытие меню действий с пином
-function handlePinClick(e) {
+function handlePinCircleMouseenter(e) {
     e.stopPropagation();
     e.preventDefault();
     
-    const id = +e.target.closest(`div.${PIN_WRAPPER_CLASS}`).id.split('-')[2];
-    const pin = getPinById(id); 
-    openPinModal(pin);
+    const id = +e.target.closest(`div.${PIN_WRAPPER_CLASS}`).getAttribute('id').slice(4);
+    const pin = getPinById(id);
+    setCurrentPin(pin); 
+
+    openPinMenu(e);
 }
 
 export {
     handleSearchFormSubmit,
-    handlePinClick
+    handlePinCircleMouseenter
 }

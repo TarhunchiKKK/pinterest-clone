@@ -1,58 +1,46 @@
-import { openBoardModal } from '../../boards';
-import { openComplaintModal } from '../../complaints';
+import { handleOpenBoardsModal, openBoardModal } from '../../boards';
+import { handleOpenComplaintsModal, openComplaintModal } from '../../complaints';
+import { PIN_WRAPPER_CLASS } from '../../shared/constants';
 
-const modalId = 'pin-modal';
-const environmentId = 'pin-modal-environment-id';
 const boardButtonId = 'pin-modal-board-button';
 const complaintButtonId = 'pin-modal-complaint-button';
 
-function handleOpenBoardModal(e) {
-    handleCloseModal();
-    openBoardModal(pin);
-}
+function openPinMenu(target) {
+    const predict = target.closest(`.${PIN_WRAPPER_CLASS}`);
 
-function handleOpenComplaintModal(e) {
-    handleCloseModal();
-    openComplaintModal(pin);
-}
-
-function openPinModal(pin) {
-    const modal = document.createElement('div');
-    modal.setAttribute('id', modalId);
-
-    const environment = document.createElement('div');
-    environment.setAttribute('id', environmentId);
-    environment.addEventListener('click', handleCloseModal);
+    const menu = document.createElement('div');
+    menu.setAttribute('class', 'absolute flex flex-col items-center gap-2 z-30 bg-[#d1478e] right-0 bottom-0 rounded-tl-xl px-4 py-2');
+    menu.addEventListener('mouseleave', handleClosePinMenu);
 
     const boardButton = document.createElement('button');
     boardButton.setAttribute('id', boardButtonId);
-    boardButton.innerText = 'Добавить на доску';
-    boardButton.addEventListener('click', handleOpenBoardModal);
+    boardButton.innerText = 'Add to board';
+    boardButton.addEventListener('click', handleOpenBoardsModal);
+    menu.append(boardButton);
 
     const complaintButton = document.createElement('button');
     complaintButton.setAttribute('id', complaintButtonId);
-    complaintButton.innerText = 'Рожаловаться';
-    complaintButton.addEventListener('click', handleOpenComplaintModal);
+    complaintButton.innerText = 'Complaint';
+    complaintButton.addEventListener('click', handleOpenComplaintsModal);
+    menu.append(complaintButton);
 
-    modal.apend(boardButton, complaintButton);
-    document.body.append(environment, modal);
+    predict.append(menu);
 }
 
-function handleCloseModal(e) {
+
+function handleClosePinMenu(e) {
     const boardButton = document.getElementById(boardButtonId);
-    boardButton.removeEventListener('click', handleOpenBoardModal);
+    boardButton.removeEventListener('click', handleOpenBoardsModal);
 
     const complaintButton = document.getElementById(complaintButtonId);
-    complaintButton.removeEventListener('click', handleOpenComplaintModal);
+    complaintButton.removeEventListener('click', handleOpenComplaintsModal);
 
-    const environment = document.getElementById(environmentId);
-    environment.removeEventListener('click', handleCloseModal);
-    environment.remove();
-
-    const modal = document.getElementById(modalId);
-    modal.remove();
+    const target = e.target;
+    target.removeEventListener('mouseleave', handleClosePinMenu);
+    target.remove();
 }
 
 export {
-    openPinModal,
+    openPinMenu,
+    handleClosePinMenu
 }
