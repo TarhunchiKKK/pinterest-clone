@@ -8,11 +8,13 @@ import { PINS_URL } from "../../shared/constants.js";
 let pins = [];
 
 async function initPins() {
-    pins = JSON.parse(localStorage.getItem('pins')) ?? [];
-    if (!pins || pins.length === 0) {
-        const result = await fetch(PINS_URL)
-        pins = await result.json()[0];
+    if (!localStorage.getItem('pins')) {
+        const result = await fetch(PINS_URL);
+        pins = await result.json();
         savePins();
+    }
+    else {
+        pins = JSON.parse(localStorage.getItem('pins'));
     }
 
     renderPins();
@@ -49,7 +51,7 @@ function searchPins() {
     
     return pins
         .filter(pin => title === undefined ? true : pin.title.toLowerCase().includes(title.toLowerCase()))
-        // .filter(pin => board === undefined ? true : pin.boards.includes(board));
+        .filter(pin => board === undefined ? true : pin.boards.includes(board));
 }
 
 // сохранение пинов в localStorage
