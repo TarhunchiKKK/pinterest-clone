@@ -1,6 +1,6 @@
 import { createPin } from "./pin.js";
 
-const pinsWrapperStyle = 'flex flex-column justify-start items-center grow'
+const pinsWrapperStyle = 'flex flex-col justify-start gap-6 items-center grow'
 
 // создание колонки с пинами
 export function createPinsColumn(pins) {

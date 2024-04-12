@@ -677,6 +677,10 @@ video {
   height: 100vh;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -695,6 +699,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-3 {
+  width: 0.75rem;
 }
 
 .flex-grow {
@@ -877,8 +885,16 @@ video {
     margin-bottom: 1rem;
   }
 
+  .sm\:h-6 {
+    height: 1.5rem;
+  }
+
   .sm\:w-1\/3 {
     width: 33.333333%;
+  }
+
+  .sm\:w-6 {
+    width: 1.5rem;
   }
 
   .sm\:rounded-lg {
@@ -930,5 +946,25 @@ video {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:h-9 {
+    height: 2.25rem;
+  }
+
+  .lg\:w-9 {
+    width: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:h-12 {
+    height: 3rem;
+  }
+
+  .xl\:w-12 {
+    width: 3rem;
   }
 }

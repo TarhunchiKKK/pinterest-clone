@@ -1,5 +1,5 @@
 // разбиение всех пинов на группы
-export function splitPins(pins, divisor = 7) {
+export function splitPins(pins, divisor ) {
     /////////////////
     pins = pins[0]
 
