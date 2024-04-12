@@ -30,11 +30,11 @@ function handlePinCircleMouseenter(e) {
     e.stopPropagation();
     e.preventDefault();
     
-    // const id = +e.target.closest(`div.${PIN_WRAPPER_CLASS}`).getAttribute('id').slice(4);
-    // const pin = getPinById(id);
-    // setCurrentPin(pin); 
+    const id = +e.target.closest(`div.${PIN_WRAPPER_CLASS}`).getAttribute('id').slice(4);
+    const pin = getPinById(id);
+    setCurrentPin(pin); 
 
-    // openPinMenu(e.target);
+    openPinMenu(e.target);
 }
 
 export {

@@ -592,6 +592,28 @@ video {
   width: 100%;
 }
 
+.pin-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.pin-image-wrapper:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .pin-image-wrapper {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .pin-image-wrapper {
+    border-radius: 0.75rem;
+  }
+}
+
 .fixed {
   position: fixed;
 }
@@ -876,10 +898,6 @@ video {
   margin-bottom: 0px;
 }
 
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
-}
-
 @media (min-width: 640px) {
   .sm\:mb-4 {
     margin-bottom: 1rem;
@@ -895,10 +913,6 @@ video {
 
   .sm\:w-6 {
     width: 1.5rem;
-  }
-
-  .sm\:rounded-lg {
-    border-radius: 0.5rem;
   }
 
   .sm\:px-8 {

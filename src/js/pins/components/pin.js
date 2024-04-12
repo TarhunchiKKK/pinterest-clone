@@ -1,4 +1,4 @@
-import { PIN_WRAPPER_CLASS } from "../../shared/constants.js";
+import { PIN_IMAGE_WRAPPER, PIN_WRAPPER_CLASS } from "../../shared/constants.js";
 import { handlePinCircleMouseenter } from "../handlers/handlers.js";
 
 // создание пина
@@ -10,7 +10,7 @@ export function createPin(pin) {
 
     // обертка картинки
     const imageWrapper = document.createElement('div');
-    imageWrapper.setAttribute('class', 'relative rounded-md sm:rounded-lg md:rounded-xl hover:cursor-pointer');
+    imageWrapper.setAttribute('class', PIN_IMAGE_WRAPPER);
 
     // картинка
     const image = document.createElement('img');

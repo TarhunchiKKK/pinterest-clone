@@ -4,3 +4,4 @@ export const MODAL_ENVIRONMENT_STYLE = '';
 export const MODAL_STYLE = '';
 
 export const PIN_WRAPPER_CLASS = 'pin-wrapper';
+export const PIN_IMAGE_WRAPPER = 'pin-image-wrapper';

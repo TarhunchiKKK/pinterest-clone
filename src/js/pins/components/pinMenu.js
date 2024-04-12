@@ -1,12 +1,13 @@
 import { handleOpenBoardsModal } from '../../boards/index.js';
 import { handleOpenComplaintsModal } from '../../complaints/index.js';
-import { PIN_WRAPPER_CLASS } from '../../shared/constants.js';
+import { PIN_IMAGE_WRAPPER } from '../../shared/constants.js';
 
 const boardButtonId = 'pin-modal-board-button';
 const complaintButtonId = 'pin-modal-complaint-button';
 
 function openPinMenu(target) {
-    const predict = target.closest(`.${PIN_WRAPPER_CLASS}`);
+    const predict = target.closest(`.${PIN_IMAGE_WRAPPER}`);
+    console.log(predict)
 
     const menu = document.createElement('div');
     menu.setAttribute('class', 'absolute flex flex-col items-center gap-2 z-30 bg-[#d1478e] right-0 bottom-0 rounded-tl-xl px-4 py-2');

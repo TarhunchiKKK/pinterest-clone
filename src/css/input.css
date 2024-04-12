@@ -6,4 +6,8 @@
     .pin-wrapper {
         @apply w-full;
     }
+
+    .pin-image-wrapper {
+        @apply relative overflow-hidden rounded-md sm:rounded-lg md:rounded-xl hover:cursor-pointer;
+    }
 }
