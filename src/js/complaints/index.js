@@ -1,5 +1,2 @@
-export {
-    // handleAddComplaintToPin,
-    handleOpenComplaintsModal
-} from './handlers/handlers.js';
+export { handleOpenComplaintsModal } from './handlers/handlers.js';
 export { getComplaints } from './helpers/getComplaints.js';

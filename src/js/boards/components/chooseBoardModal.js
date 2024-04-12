@@ -1,7 +1,6 @@
-import { getBoards } from '../../utils/getBoards.js';
-import { addPinToBoard } from '../../pins/lib/pins.js';
-import { getCurrentPin } from '../../pins/lib/pins';
+import { getCurrentPin, addPinToBoard } from '../../pins/index.js';
 import { updatePin } from '../../pins/index.js';
+import { getBoards } from '../helpers/getBoards.js';
 
 const modalId = 'choose-board-modal';
 const formId = 'choose-board-form';

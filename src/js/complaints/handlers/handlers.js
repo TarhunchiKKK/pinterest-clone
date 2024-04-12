@@ -1,5 +1,5 @@
-import { getCurrentPin, addComplaintToPin } from "../../pins";
-import { openComplaintsModal } from "../components/complaintModal";
+// import { getCurrentPin, addComplaintToPin } from "../../pins/index.js";
+import { openComplaintsModal } from "../components/complaintModal.js";
 
 // function handleAddComplaintToPin(e) {
 //     e.stopPropagation();

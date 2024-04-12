@@ -1,4 +1,4 @@
-import { createPin } from "./createPin.js";
+import { createPin } from "./pin.js";
 
 const pinsWrapperStyle = 'flex flex-column justify-start items-center grow'
 
@@ -8,8 +8,7 @@ export function createPinsColumn(pins) {
     pinsWrapper.setAttribute('class', pinsWrapperStyle);
 
     for (let pin of pins) {
-        poinsWrapper.appendChild(createPin(pin));
+        pinsWrapper.append(createPin(pin));
     }
-
     return pinsWrapper;
 }

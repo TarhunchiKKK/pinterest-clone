@@ -1,6 +1,6 @@
-import { handleOpenBoardsModal, openBoardModal } from '../../boards';
-import { handleOpenComplaintsModal, openComplaintModal } from '../../complaints';
-import { PIN_WRAPPER_CLASS } from '../../shared/constants';
+import { handleOpenBoardsModal } from '../../boards/index.js';
+import { handleOpenComplaintsModal } from '../../complaints/index.js';
+import { PIN_WRAPPER_CLASS } from '../../shared/constants.js';
 
 const boardButtonId = 'pin-modal-board-button';
 const complaintButtonId = 'pin-modal-complaint-button';

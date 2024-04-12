@@ -3,7 +3,7 @@ export {
     savePins,
     getPinById,
     addPinToBoard,
-    addComplaintToPin
+    addComplaintToPin,
 } from './lib/pins.js';
 
 export {
@@ -24,6 +24,6 @@ export {
 } from './api/api.js';
 
 export {
-    handlePinClick,
+    handlePinCircleMouseenter,
     handleSearchFormSubmit
 }from './handlers/handlers.js';

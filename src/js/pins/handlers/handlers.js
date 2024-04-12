@@ -1,6 +1,8 @@
 import { PIN_WRAPPER_CLASS } from "../../shared/constants.js";
 import { openPinMenu } from "../components/pinMenu.js";
-import { getPinById, renderPins, setTitleToSearchPins } from "../pins";
+import { getPinById, renderPins } from "../lib/pins.js";
+import { setTitleToSearchPins } from "../lib/search.js";
+import { setCurrentPin } from "../lib/currentPin.js";
 
 // обработчик поиска пинов по названию
 function handleSearchFormSubmit(e) {
@@ -26,7 +28,7 @@ function handlePinCircleMouseenter(e) {
     const pin = getPinById(id);
     setCurrentPin(pin); 
 
-    openPinMenu(e);
+    openPinMenu(e.target);
 }
 
 export {

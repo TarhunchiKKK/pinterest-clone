@@ -1,5 +1,5 @@
-import { getCurrentPin, renderPins } from "../../pins";
-import { addPinToBoard, setBoardToSearchPins } from "../../pins";
+import { getCurrentPin, renderPins } from "../../pins/index.js";
+import { addPinToBoard, setBoardToSearchPins } from "../../pins/index.js";
 import { openChooseBoardDropdown, closeChooseBoardDropdown } from "../components/chooseBoardDropdown.js";
 import { openBoardsModal } from "../components/chooseBoardModal.js";
 

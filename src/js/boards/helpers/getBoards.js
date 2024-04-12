@@ -1,5 +1,5 @@
 // получение номеров досок
-function getBoards() {
+export function getBoards() {
     return [
         1, 
         2, 

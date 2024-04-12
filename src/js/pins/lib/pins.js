@@ -1,9 +1,24 @@
 import { splitPins } from "../helpers/splitPins.js";
-import { createPinsWrapper } from "../components/pinsColumn.js";
+import { createPinsColumn } from "../components/pinsColumn.js";
 import { getColumnsCount } from "../helpers/getColumnsCount.js";
 import { getPinsSearchOptions } from "./search.js";
+import { fetchPins } from "../api/api.js";
+import { PINS_URL } from "../../shared/constants.js";
 
-let pins = JSON.parse(localStorage.getItem('pins')) ?? [];
+let pins = [];
+
+export async function initPins() {
+    pins = JSON.parse(localStorage.getItem('pins')) ?? [];
+
+    if (!pins || pins.length === 0) {
+        const result = await fetch(PINS_URL)
+        pins = await result.json();
+    }
+
+    renderPins();
+}
+
+await initPins();
 
 
 // отрисовка пинов
@@ -14,7 +29,7 @@ function renderPins() {
     const pinsWrappersCount = getColumnsCount();
 
     const splitedPins = splitPins(renderList, pinsWrappersCount);
-    const pinsWrappers = splitedPins.map(item => createPinsWrapper(item));
+    const pinsWrappers = splitedPins.map(item => createPinsColumn(item));
     
     for (let pinsWrapper of pinsWrappers) {
         pinsContainer.appendChild(pinsWrapper)
