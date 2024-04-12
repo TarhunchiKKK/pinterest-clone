@@ -4,6 +4,7 @@ export {
     getPinById,
     addPinToBoard,
     addComplaintToPin,
+    initPins
 } from './lib/pins.js';
 
 export {

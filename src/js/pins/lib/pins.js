@@ -7,12 +7,12 @@ import { PINS_URL } from "../../shared/constants.js";
 
 let pins = [];
 
-export async function initPins() {
+async function initPins() {
     pins = JSON.parse(localStorage.getItem('pins')) ?? [];
-
     if (!pins || pins.length === 0) {
         const result = await fetch(PINS_URL)
-        pins = await result.json();
+        pins = await result.json()[0];
+        savePins();
     }
 
     renderPins();
@@ -22,8 +22,10 @@ await initPins();
 
 
 // отрисовка пинов
-function renderPins() {
+function renderPins() {    
     const pinsContainer = document.getElementById('pins-container')
+
+    pinsContainer.innerHTML = '';
     
     const renderList = searchPins();
     const pinsWrappersCount = getColumnsCount();
@@ -32,7 +34,7 @@ function renderPins() {
     const pinsWrappers = splitedPins.map(item => createPinsColumn(item));
     
     for (let pinsWrapper of pinsWrappers) {
-        pinsContainer.appendChild(pinsWrapper)
+        pinsContainer.append(pinsWrapper)
     }
 }
 
@@ -46,8 +48,8 @@ function searchPins() {
     const { title, board } = getPinsSearchOptions();
     
     return pins
-        .filter(pin => title === undefined ? true : pin.title.includes(title.toLowerCase()))
-        .filter(pin => title === undefined ? true : pin.board === board);
+        .filter(pin => title === undefined ? true : pin.title.toLowerCase().includes(title.toLowerCase()))
+        // .filter(pin => board === undefined ? true : pin.boards.includes(board));
 }
 
 // сохранение пинов в localStorage
@@ -94,5 +96,6 @@ export {
     savePins,
     addPinToBoard,
     addComplaintToPin,
-    getPinById
+    getPinById,
+    initPins
 }

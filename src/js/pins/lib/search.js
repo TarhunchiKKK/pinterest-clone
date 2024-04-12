@@ -17,8 +17,15 @@ function setBoardToSearchPins(board) {
     localStorage.setItem('search', JSON.stringify(pinsSearchOptions));
 }
 
+
+function resetTitleToSearchPins() {
+    pinsSearchOptions.title = undefined;
+    localStorage.setItem('search', JSON.stringify(pinsSearchOptions));
+}
+
 export {
     getPinsSearchOptions,
     setTitleToSearchPins,
-    setBoardToSearchPins
+    setBoardToSearchPins,
+    resetTitleToSearchPins
 }
